@@ -7,10 +7,10 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 const routes = [
-  { path: '/', Component: Home },
-  { path: '/about', Component: About },
-  { path: '/project', Component: Project },
-  { path: '/experience', Component: Experience },
+  { path: '/portfolio/', Component: Home },
+  { path: '/portfolio/about', Component: About },
+  { path: '/portfolio/project', Component: Project },
+  { path: '/portfolio/experience', Component: Experience },
 ]
 
 function App() {
