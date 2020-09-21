@@ -42,17 +42,6 @@ const experiences =[
       '- Developed Proof of Concepts that visualize financial data in AR and deployed apps to payment terminals'
     ],
   },
-  {
-    company: 'UasdO Mobile Solutions',
-    title: 'iOS Engineer',
-    time: 'Sep 2018 - Apr 2019',
-    location: 'Toronto, Canada',
-    descriptions: [
-      '- Implemented features and functionality including custom gestures, UI interface and animation. Integrated Apple Pay into UGO Wallet, and became the 1st mobile app able to purchase e-gift cards in Canada',
-      '- Developed accessibility for the entire TD Wheels by myself, resulted in 5% increase of user base',
-      '- Developed Proof of Concepts that visualize financial data in AR and deployed apps to payment terminals'
-    ],
-  }
 ]
 function Experience() {
 
