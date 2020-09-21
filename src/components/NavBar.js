@@ -5,15 +5,15 @@ import { Logo, LogoSelected } from '../images';
 
 const navs = [
   {
-    link: '/portfolio/about',
+    link: '/about',
     text: 'About'
   },
   {
-    link: '/portfolio/project',
+    link: '/project',
     text: 'Projects'
   },
   {
-    link: '/portfolio/experience',
+    link: '/experience',
     text: 'Experience'
   },
 ]
@@ -34,7 +34,7 @@ function NavBar() {
   return (
     <NavBarWrapper>
       <LogoWrapper>
-          <Link to="/portfolio/">
+          <Link to="/">
             <img src={Logo} height="50" alt="Logo"/>
           </Link>
       </LogoWrapper>
