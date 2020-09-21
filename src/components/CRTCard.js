@@ -1,0 +1,120 @@
+import React from 'react';
+import styled from 'styled-components';
+import { textShadow, scan, screen } from '../animation';
+
+function CRTCard({ details }) {
+  const { link, name, purpose, tech } = details;
+
+  return (
+    <div style={{padding:'1em'}}>
+      <CRT>
+      <CRTScreen>
+        <CRTContent>
+          <Demo src={link} alt={name} />
+          <CRTText>
+            <p>[Project Name]: {name}</p>
+            <p>[Purpose]: {purpose}</p>
+            <p>[Technoloy used]: {tech}</p>
+          </CRTText>
+          <ScanLine />
+        </CRTContent>
+      </CRTScreen>
+    </CRT>
+    </div>
+    
+  );
+}
+
+const CRT = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+  font-family: 'Source Code Pro', monospace;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  background: #161616;
+  height: 500px;
+  width: 480px;
+  border-radius: 5px;
+  position: relative;
+  animation: ${textShadow} 4s infinite;
+  color: #ffffff;
+  overflow: auto;
+`
+
+const CRTScreen = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  &&:before,
+  &&:after {
+    display: block;
+    pointer-events: none;
+    content: '';
+    position: absolute;
+  }
+
+  &&:before {
+    // position: absolute;
+    // bottom: 100%;
+    width: 100%;
+    height: 2px;
+    z-index: 11;
+    background: rgba(0,0,0,.3);
+    opacity: 0.75;
+    // animation: scanline 6s linear infinite;
+  }
+
+  &&:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0,0,0,.3) 51%
+    );
+    background-size: 100% 4px;
+    animation: ${screen} 100ms steps(60) infinite;
+  }
+`
+
+const CRTContent = styled.div`
+  height: 500px;
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  overflow: auto;
+`
+
+const CRTText = styled.div`
+  padding: 0 1em 1em 1em;
+  width: -webkit-fill-available;
+`
+
+const ScanLine = styled.div`
+  width: 100%;
+  height: 50px;
+  z-index: 12;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(255, 255, 255, 0.2) 10%,
+      rgba(0, 0, 0, 0.1) 100%
+  );
+  position: absolute;
+  bottom: 100%;
+  opacity: 0;
+  animation: ${scan} 4s linear infinite;
+`
+
+const Demo = styled.img`
+  object-fit: contain;
+  max-width: 90%;
+  height: 50%;
+  // min-height: 30%;
+  margin: 1em;
+`
+
+export default CRTCard;
