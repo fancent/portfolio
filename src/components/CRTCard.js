@@ -116,7 +116,6 @@ const DemoWrapper = styled.a`
 const Demo = styled.img`
   object-fit: contain;
   height: 100%;
-  margin: 1em;
 `
 
 export default CRTCard;
