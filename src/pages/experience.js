@@ -78,7 +78,7 @@ const ExperienceWrapper = styled.div`
   margin: 3em 9em 3em 9em;
   height: 70vh;
   cursor: default;
-  overflow: scroll;
+  overflow-y: auto;
   font-weight: 300;
 `
 

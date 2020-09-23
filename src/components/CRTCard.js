@@ -3,14 +3,16 @@ import styled from 'styled-components';
 import { textShadow, scan, screen } from '../animation';
 
 function CRTCard({ details }) {
-  const { link, name, purpose, tech } = details;
+  const { link, name, purpose, tech, sourceCode } = details;
 
   return (
     <div style={{padding:'1em'}}>
       <CRT>
       <CRTScreen>
         <CRTContent>
-          <Demo src={link} alt={name} />
+          <DemoWrapper target="_blank" rel="noopener noreferrer" href={sourceCode}>
+            <Demo src={link} alt={name} />
+          </DemoWrapper>
           <CRTText>
             <p>[Project Name]: {name}</p>
             <p>[Purpose]: {purpose}</p>
@@ -52,14 +54,11 @@ const CRTScreen = styled.div`
   }
 
   &&:before {
-    // position: absolute;
-    // bottom: 100%;
     width: 100%;
     height: 2px;
     z-index: 11;
     background: rgba(0,0,0,.3);
     opacity: 0.75;
-    // animation: scanline 6s linear infinite;
   }
 
   &&:after {
@@ -90,7 +89,7 @@ const CRTContent = styled.div`
 
 const CRTText = styled.div`
   padding: 0 1em 1em 1em;
-  width: -webkit-fill-available;
+  cursor: default;
 `
 
 const ScanLine = styled.div`
@@ -109,11 +108,14 @@ const ScanLine = styled.div`
   animation: ${scan} 4s linear infinite;
 `
 
+const DemoWrapper = styled.a`
+  height: 50%;
+  margin: 1em;
+  object-fit: contain;
+`
 const Demo = styled.img`
   object-fit: contain;
-  max-width: 90%;
-  height: 50%;
-  // min-height: 30%;
+  height: 100%;
   margin: 1em;
 `
 
