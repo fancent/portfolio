@@ -51,19 +51,35 @@ const AboutWrapper = styled.div`
   flex-direction: column;
   margin: 5em 5em 5em 9em;
   cursor: default;
+  height: 100%;
+  @media (max-width: 752px) {
+    width: 100%;
+    margin: 0;
+    overflow-y: scroll;
+  }
 `
 
 const BodyWrapper = styled.div`
+  @media (max-width: 752px) {
+    width: 100%;
+  }
 `
 
 const BodyTitle = styled.h1`
   color: #dbedf3;
+  padding: 0 1em 0 1em;
 `
 
 const BodyText = styled.h4`
   color: #dbedf3;
   margin: 0.5em 0 0.5em 2em;
   width: 60%;
+  @media (max-width: 752px) {
+    font-size: 14px;
+    width: auto;
+    margin: 0;
+    padding: 0 3em 0 3em;
+  }
 `
 
 export default About;

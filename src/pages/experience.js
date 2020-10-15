@@ -8,8 +8,9 @@ const experiences =[
     time: 'Jul 2020 - present',
     location: 'Hong Kong',
     descriptions: [
-      '- Developed over 50 JavaScript Apps on our in-house platform for each Client which involve data aggregation and visualization, CRUD operation, and numeric analysis',
-      '- Created an App template that decreases average production time by 20% and optimized part of old code base by reducing O(n^2) operations to linear time'
+      '- Developed over 50 JavaScript Apps on our in-house platform which involve data aggregation and visualization, CRUD operation, numeric analysis, and integration with 3rd party apps.',
+      '- Extracted information from our datasets and created market data models',
+      '- Decreased average production time by 20 % by creating an App template. Reduced old code base algorithms to linear time from $O(n^2)$'
     ],
   },
   {
@@ -28,7 +29,7 @@ const experiences =[
     location: 'Hong Kong',
     descriptions: [
       '- Developed and designed the front end of our desktop and mobile websites using React and Redux',
-      '- Helped building the back end with REST API Design in Python'
+      '- Collaborated in building the back end with REST API Design in Python.'
     ],
   },
   {
@@ -37,8 +38,8 @@ const experiences =[
     time: 'Sep 2018 - Apr 2019',
     location: 'Toronto, Canada',
     descriptions: [
-      '- Implemented features and functionality including custom gestures, UI interface and animation. Integrated Apple Pay into UGO Wallet, and became the 1st mobile app able to purchase e-gift cards in Canada',
-      '- Developed accessibility for the entire TD Wheels by myself, resulted in 5% increase of user base',
+      '- 1st mobile app able to purchase e-gift cards in Canada after I integrated Apple Pay into our app. Also implemented features and functionality including custom gestures, UI interface and animation.',
+      '- 5% increase of our user base after I developed accessibility for the entire app',
       '- Developed Proof of Concepts that visualize financial data in AR and deployed apps to payment terminals'
     ],
   },
@@ -80,12 +81,22 @@ const ExperienceWrapper = styled.div`
   cursor: default;
   overflow-y: auto;
   font-weight: 300;
+  @media (max-width: 752px) {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
 `
 
 const BodyWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  @media (max-width: 752px) {
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+  }
 `
 
 const BodyTitle = styled.div`
@@ -95,6 +106,14 @@ const BodyTitle = styled.div`
   flex-direction: column;
   align-items: center;
   width: 40%;
+  @media (max-width: 752px) {
+    flex-direction: row;
+    width: 90%;
+    // padding: 0 1em 0 1em;
+    > h4 {
+      margin-left: 1em;
+    }
+  }
 `
 
 const BodyTextWrapper = styled.div`
@@ -102,11 +121,17 @@ const BodyTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
+  @media (max-width: 752px) {
+    width: 90%;
+  }
 `
 
 const BodyText = styled.h4`
   color: #dbedf3;
   margin: 0.5em 0 0.5em 2em;
+  @media (max-width: 752px) {
+    margin: 0.5em 0 0.5em 1em;
+  }
 `
 
 export default Experience;

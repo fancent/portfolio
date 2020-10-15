@@ -28,3 +28,9 @@
   transition: opacity 300ms, transform 300ms;
 }
   
+
+@media (max-width: 752px) {
+  .page {
+    height: 75%;
+  }
+}

@@ -62,10 +62,17 @@ const ProjectWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 752px) {
+    margin: 0;
+    width: 100%;
+  }
 `
 
 const BodyTitle = styled.h1`
   color: #dbedf3;
+  @media (max-width: 752px) {
+    padding: 0 1em 0 1em;
+  }
 `
 
 const CardsWrapper = styled.div`
@@ -74,6 +81,14 @@ const CardsWrapper = styled.div`
   grid-gap: 10px;
   overflow-y: scroll;
   margin-bottom: 8vh;
+
+  @media (max-width: 752px) {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export default Project;

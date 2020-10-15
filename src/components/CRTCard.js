@@ -6,26 +6,33 @@ function CRTCard({ details }) {
   const { link, name, purpose, tech, sourceCode } = details;
 
   return (
-    <div style={{padding:'1em'}}>
+    <CRTWrapper>
       <CRT>
-      <CRTScreen>
-        <CRTContent>
-          <DemoWrapper target="_blank" rel="noopener noreferrer" href={sourceCode}>
-            <Demo src={link} alt={name} />
-          </DemoWrapper>
-          <CRTText>
-            <p>[Project Name]: {name}</p>
-            <p>[Purpose]: {purpose}</p>
-            <p>[Technoloy used]: {tech}</p>
-          </CRTText>
-          <ScanLine />
-        </CRTContent>
-      </CRTScreen>
-    </CRT>
-    </div>
-    
+        <CRTScreen>
+          <CRTContent>
+            <DemoWrapper target="_blank" rel="noopener noreferrer" href={sourceCode}>
+              <Demo src={link} alt={name} />
+            </DemoWrapper>
+            <CRTText>
+              <p>[Project Name]: {name}</p>
+              <p>[Purpose]: {purpose}</p>
+              <p>[Technoloy used]: {tech}</p>
+            </CRTText>
+            <ScanLine />
+          </CRTContent>
+        </CRTScreen>
+      </CRT>
+    </CRTWrapper>
   );
 }
+
+const CRTWrapper = styled.div`
+  padding: 1em;
+  @media (max-width: 752px) {
+    padding: 0;
+    width: 90vw;
+  }
+`
 
 const CRT = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
@@ -39,6 +46,11 @@ const CRT = styled.div`
   animation: ${textShadow} 4s infinite;
   color: #ffffff;
   overflow: auto;
+
+  @media (max-width: 752px) {
+    width: 90vw;
+    height: auto;
+  }
 `
 
 const CRTScreen = styled.div`
@@ -85,6 +97,11 @@ const CRTContent = styled.div`
   justify-content: end;
   align-items: center;
   overflow: auto;
+  @media (max-width: 752px) {
+    width: 90%;
+    height: auto;
+    padding: 1em;
+  }
 `
 
 const CRTText = styled.div`
@@ -112,10 +129,17 @@ const DemoWrapper = styled.a`
   height: 50%;
   margin: 1em;
   object-fit: contain;
+
+  @media (max-width: 752px) {
+    height: 30vh;
+  }
 `
 const Demo = styled.img`
   object-fit: contain;
   height: 100%;
+  @media (max-width: 752px) {
+    width: 100%;
+  }
 `
 
 export default CRTCard;

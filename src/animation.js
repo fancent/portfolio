@@ -131,3 +131,36 @@ export const spin = keyframes`
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 `
+
+export const showNavLinks = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`
+
+export const showDrawer = keyframes`
+  from {
+    transform: translateX(100%);
+    display: none;
+  }
+  to {
+    transform: translateX(0%);
+    display: block;
+  }
+`
+
+export const hideDrawer = keyframes`
+  from {
+    transform: translateX(0%);
+    display: block;
+  }
+  to {
+    transform: translateX(100%);
+    display: none;
+  }
+`

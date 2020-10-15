@@ -16,13 +16,13 @@ function Contact() {
   };
   return (
     <IconContainer style={{'textShadow':`${(window.innerWidth - offSet.x)/100}px ${(window.innerHeight - offSet.y)/80}px rgba(247,56,89,.75)`}}>
-      <a href="https://www.linkedin.com/in/vincent-fan/">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/vincent-fan/">
         <Icon className="fab fa-linkedin" />
       </a>
-      <a href="https://github.com/fancent">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/fancent">
         <Icon className="fab fa-github-square" />
       </a>
-      <a href="mailto:vincent.kc.fan@gmail.com">
+      <a target="_blank" rel="noopener noreferrer" href="mailto:vincent.kc.fan@gmail.com">
         <Icon className="fas fa-envelope-square" />
       </a>
     </IconContainer>
@@ -46,6 +46,10 @@ const IconContainer = styled.div`
   bottom: 0;
   right: 0;
   margin: 1rem;
+  @media (max-width: 752px) {
+    right: 1em;
+    bottom: 1em;
+  }
 `
 
 export default Contact;

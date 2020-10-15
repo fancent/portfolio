@@ -83,6 +83,10 @@ const CursorWrapper = styled.div.attrs(props => ({
   &.cursor--hidden {
     opacity: 0;
   }
+
+  @media (max-width: 752px) {
+    display: none;
+  }
 `
 
 export default Cursor;

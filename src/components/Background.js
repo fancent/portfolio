@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
 import { Noise, ArmImg } from '../images';
-import { noise, spin} from '../animation';
+import { noise, spin } from '../animation';
 
 function Background() {
   const [offSet, setOffSet] = useState({x: window.innerWidth/2, y: window.innerHeight/2});
@@ -85,6 +85,9 @@ const Arm = styled.div`
   z-index: -2;
   opacity: 0.1;
   transform: rotate(20deg);
+  @media (max-width: 752px) {
+    display: none;
+  }
 `
 
 const CircleContainer = styled.div`
@@ -93,6 +96,9 @@ const CircleContainer = styled.div`
   z-index: -10;
   position: absolute;
   opacity: .05;
+  @media (max-width: 752px) {
+    display: none;
+  }
 `
 
 const OuterCircle = styled.div`
