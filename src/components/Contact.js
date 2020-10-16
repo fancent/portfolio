@@ -47,8 +47,7 @@ const IconContainer = styled.div`
   right: 0;
   margin: 1rem;
   @media (max-width: 752px) {
-    right: 1em;
-    bottom: 1em;
+    margin: 3px;
   }
 `
 

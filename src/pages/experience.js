@@ -60,7 +60,6 @@ function Experience() {
           <BodyTextWrapper>
             {renderDescriptions(descriptions)}
           </BodyTextWrapper>
-          
         </BodyWrapper>
       );
     });
@@ -79,11 +78,11 @@ const ExperienceWrapper = styled.div`
   margin: 3em 9em 3em 9em;
   height: 70vh;
   cursor: default;
-  overflow-y: auto;
+  overflow-y: scroll;
   font-weight: 300;
   @media (max-width: 752px) {
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     margin: 0;
   }
 `
@@ -105,13 +104,19 @@ const BodyTitle = styled.div`
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   width: 40%;
+  
   @media (max-width: 752px) {
-    flex-direction: row;
     width: 90%;
-    // padding: 0 1em 0 1em;
+    padding: 0 1em 0 1em;
+
+    > h1 {
+      margin-bottom: 0;
+    }
+
     > h4 {
-      margin-left: 1em;
+      // margin-left: 1em;
     }
   }
 `
@@ -121,6 +126,7 @@ const BodyTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
+
   @media (max-width: 752px) {
     width: 90%;
   }
@@ -129,8 +135,10 @@ const BodyTextWrapper = styled.div`
 const BodyText = styled.h4`
   color: #dbedf3;
   margin: 0.5em 0 0.5em 2em;
+  text-align: center;
+
   @media (max-width: 752px) {
-    margin: 0.5em 0 0.5em 1em;
+    margin: 0.5em 0 0.5em 0em;
   }
 `
 
